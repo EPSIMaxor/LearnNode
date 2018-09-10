@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/semanticui/semantic.min.css"/>
 </head>
 <body>
-    <h1>message</h1>
-    <h2><%=error.status%></h2>
-    <pre><%=error.stack%></pre>
+    <h1 class=""><%=locals.error.status%></h1>
+    <h2 class=""><%=message%></h2>
+    <p>La page que vouz avez demandée n'existe pas <a href="/">Retour à l'Accueil</a></p>
+    <pre class=""><%=locals.error.stack%></pre>
 </body>
 </html>

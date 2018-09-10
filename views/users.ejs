@@ -2,6 +2,14 @@
 
 <p>Page user <%=user%></p>
 
+<form action="/users" method="POST" class="ui form">
+    <div class="field">
+        <label for="user">Nom de connexion</label>
+        <input name="user" id="user">
+    </div>
+
+</form>
+
 <form action="/users" method="post" class="ui form">
     <div class="field">
         <label for="message">Message</label>
