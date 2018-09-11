@@ -1,16 +1,11 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Error 404</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/semanticui/semantic.min.css"/>
-</head>
-<body>
-    <h1 class=""><%=locals.error.status%></h1>
-    <h2 class=""><%=message%></h2>
-    <p>La page que vouz avez demandée n'existe pas <a href="/">Retour à l'Accueil</a></p>
-    <pre class=""><%=locals.error.stack%></pre>
-</body>
-</html>
+<!DOCTYPE html>
+
+<% include header  %>
+    <img class="ui medium centered image" src="assets/images/smileyBad.png">
+    <div class="ui text container">
+        <h1 class="">Page test <%=locals.error.status%></h1>
+        <h2><%=message%></h2>
+        <p>La page que vouz avez demandée n'existe pas <a href="/">Retour à l'Accueil</a></p>
+    </div>
+    <!-- <pre><%=locals.error.stack%></pre> -->
+<% include footer.ejs  %>
