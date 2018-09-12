@@ -30,3 +30,9 @@
         <%= flash.error %>
     </div>
     <% } %>
+
+    <% if(locals.flash && locals.flash.user) {%>
+        <div class="ui positive message">
+            Bienvenue <%= flash.user %>
+        </div>
+        <% } %>
