@@ -1,26 +1,25 @@
 <% include header  %>
 
 <p>Page user <%=user%></p>
-
-<form action="/users" method="POST" class="ui form">
-    <div class="field">
-        <label for="user">Nom de connexion</label>
-        <input name="user" id="user">
+<div class="ui middle aligned center aligned grid">
+<form action="/users" method="POST" class="ui large form">
+    <div class="ui stacked segment">
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input name="id" id="id" placeholder="nom.prenom@gmail.com" type="email" required/>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input name="password" id="password" placeholder="MotDePasse@85!" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+            </div>
+        </div>
+        <button class="ui primary submit button" type="submit">Connexion</button>
     </div>
-
 </form>
-
-<form action="/users" method="post" class="ui form">
-    <div class="field">
-        <label for="message">Message</label>
-        <textarea name="message" id="message"></textarea>
-    </div>
-
-    <button type="submit" class="ui blue labeled ">
-        <i class="icon edit"></i> Envoyer
-    </button>
-
-</form>
+</div>
 
 <% include footer.ejs  %>
 

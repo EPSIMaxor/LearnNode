@@ -7,6 +7,7 @@ var session = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var ticketRouter = require('./routes/ticket');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use('/assets',express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/ticket', ticketRouter);
 
 app.use(session({
   secret: 'learnNode',

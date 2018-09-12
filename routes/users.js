@@ -27,12 +27,12 @@ router.get('/', function(req, res, next) {
 
 /* GET user. */
 router.post('/', function(req, res, next) {
-  if(req.body.message === undefined || req.body.message === '') {
+  if(req.body.id === undefined || req.body.id === 'test@gmail.com') {
     /*res.render('users',{title: 'Node users',error: "Vous n'avez pas entré de message :(", user: ''})*/
     req.flash('error', "Vous n'avez pas entré de message :(")
     res.redirect('/users')
   } else {
-    
+    res.render('ticket',{title: "Welcome"});
   }
   console.log(req.body)
 });
