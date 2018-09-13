@@ -11,7 +11,7 @@ router.use(requestTime);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var responseText = req.requestTime;
-  res.render('index', { title: 'Learn Node',time: responseText });
+  res.render('index');
 });
 
 module.exports = router;

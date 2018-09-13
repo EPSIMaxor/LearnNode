@@ -6,7 +6,7 @@ var logger = require('morgan');
 var session = require('express-session')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/connexion');
 var ticketRouter = require('./routes/ticket');
 
 var app = express();
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use('/assets',express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/connexion', usersRouter);
 app.use('/ticket', ticketRouter);
 
 app.use(session({
@@ -46,7 +46,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error',{title: " ",message: err.message});
+  res.render('error');
 });
 
 module.exports = app;

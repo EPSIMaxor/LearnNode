@@ -14,14 +14,13 @@ router.use(require('../middlewares/flash.js'))
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  // if(req.session.flash.user === undefined) {
+    console.log(req.flash.error)
     var query = url.parse(req.url,true).query
     var name = query.id === undefined ? 'anonyme' : query.id
-    console.log(req.session)
     if(query.id == undefined) {
-      res.render('users',{title: 'Node users',user: 'anonyme'});
+      res.render('connexion');
     }else {
-      res.render('users',{title: 'Node users',user: name});
+      res.render('connexion');
     }
   // }else {
     // console.log('already connected !')
@@ -32,13 +31,12 @@ router.get('/', function(req, res, next) {
 
 /* GET user. */
 router.post('/', function(req, res, next) {
-  if(req.body.id === undefined || req.body.id === 'monmail@gmail.com') {
-    /*res.render('users',{title: 'Node users',error: "Vous n'avez pas entré de message :(", user: ''})*/
-    // req.flash('user', req.body.id)
-    res.redirect('/users');
+  if(req.body.id === 'monmail@gmail.com') {
+    req.flash('user', req.body.id)
+    res.redirect('/ticket');
   } else {
-    req.flash('error', "Vous n'avez pas entré de message :(")
-    res.redirect('/users')
+    req.flash('error', req.body.id)
+    res.redirect('/ticket')
   }
   console.log(req.body)
 });

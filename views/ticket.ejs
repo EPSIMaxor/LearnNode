@@ -1,6 +1,19 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <% include header  %>
 
-<h1><%= title %></h1>
+<h1>Welcome</h1>
+
+<div class="ui comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+    <% for (message of messages) { %>
+        <div class="comments">
+            <div class="content">
+                <div class="test"><%= message.content %></div>
+            </div>
+        </div>
+    <% } %>
+
+
+</div>
 
 <% include footer.ejs  %>
